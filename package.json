@@ -10,5 +10,8 @@
     "Flask Testing Suite"
   ],
   "author": "Rick Arendsen",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@flask-globals": "workspace:^"
+  }
 }

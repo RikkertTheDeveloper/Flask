@@ -1,0 +1,20 @@
+{
+    "name": "@flask/globals",
+    "version": "0.0.1",
+    "main": "src/index.js",
+
+    "files": [
+        "src"
+    ],
+
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/RikkertTheDeveloper/Flask.git",
+        "directory": "packages/@flask-globals"
+      },
+
+    "exports": {
+        ".": "./src/index.js",
+        "./package.json": "./package.json"
+    }
+  }
