@@ -11,7 +11,9 @@
   ],
   "author": "Rick Arendsen",
   "license": "ISC",
+
   "devDependencies": {
-    "@flask-globals": "workspace:^"
+      "@flask-globals": "0.0.1",
+      "@flask-generation": "0.0.1"
   }
 }
