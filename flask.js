@@ -6,7 +6,7 @@
 */
 
 //* Define used libraries within the application.
-const flask_generation = require("@flask-generation")
+const flask_generation = require("./packages/@flask-generation/src")
 const console = require('console');
 const file_system = require('fs');
 
@@ -21,12 +21,12 @@ const textTemplate_successMessage = "\x1b[29m* \x1b[0m\x1b[30m%s:\x1b[0m \x1b[32
 //* Commence assertions before starting test suite:
 const testFolderExists = file_system.existsSync('tests');
 
-//* Read out command line input, and loop over test folder.
-const currentSession_dateObject = new Date()
-console.log(textTemplate_startMessage, `${currentSession_dateObject.toLocaleDateString()}: ${currentSession_dateObject.toLocaleTimeString()}`)
-
 //* If all assertions pass, start testing the files.
 if(testFolderExists && commandArgument_current == undefined) {
+    const currentSession_dateObject = new Date()
+    console.log(textTemplate_startMessage, `${currentSession_dateObject.toLocaleDateString()}: ${currentSession_dateObject.toLocaleTimeString()}`)
+
+    //* Read out command line input, and loop over test folder.
     file_system.readdir('tests', function(errorMessage, allTests) {
         let testFiles_failed = 0;
         let testFiles_successful = 0;
@@ -66,11 +66,16 @@ if(testFolderExists && commandArgument_current == undefined) {
     } else {
         const commandArgument_parameter = process.argv[3];
 
+        //* In case that we do want to execute a command, the logic for this command will
+        //* Be executed in this section.
         switch (commandArgument_current) {
             case "generate":
-                flask_generation.generateTest(`${__dirname}/tests`, commandArgument_parameter)
+                if(testFolderExists) {
+                    flask_generation.generateTest(`${__dirname}`, commandArgument_parameter)
+                } else {
+                    console.log("Cannot use 'generate' command without a 'tests' folder.")
+                }
                 break;
-        
             default:
                 break;
         }

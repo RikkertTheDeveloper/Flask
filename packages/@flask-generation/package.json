@@ -8,9 +8,9 @@
     ],
 
     "repository": {
-        "type": "git",
-        "url": "https://github.com/RikkertTheDeveloper/Flask.git",
-        "directory": "packages/@flask-generation"
+          "type": "git",
+          "url": "https://github.com/RikkertTheDeveloper/Flask.git",
+          "directory": "packages/@flask-generation"
       },
 
     "exports": {
