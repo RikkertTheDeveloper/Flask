@@ -1,27 +1,18 @@
+<div align="center"><img width=20% src="https://assets.onlinelabels.com/images/clip-art/pitr/pitr_Lab_icon_3.png"></div>
+<h1 align="center">Flask Testing Suite</h1>
+<h4 align="center">An extensible testing suite for the JavaScript framework.</h4>
+<br>
 
-<h3 align="center">Flask Testing Suite</h3>
-<p align="center">An extensible testing suite for the JavaScript ecosystem.</p>
-<br><br>
+### What is Flask?
+Flask is a lightweight testing suite written by <a href="https://github.com/RikkertTheDeveloper">Rick Arendsen</a>, and is heavily inspired by the <a href="https://github.com/facebook/jest">Jest Testing Suite</a> to preform unit tests in unison.
 
-## What is Flask?
-Flask is an extensible, lightweight and modular test suite written in JavaScript. It can be used for any project within the JavaScript language.
+### What can flask do?
+At the moment, flask consists of two simply libraries, **generation** and **globals**, generation can be used for generating new tests. And the global library has a list of assertions to use on your tests. 
 
-## How do I use flask?
-To use flask, simply create a folder inside of your project named 'tests', and create a .test.js file within this directory.
-
-### The test file should look something like this:
-```js 
-/**
-    * @name first_case.test.js
-    * @desc A Flask testing file. 
-*/
-
-function run() {
-    return true;
-}
-
-exports.run = run;
+### How can I run the test suite?
+After adding flask to a project, simply run:
+```
+node flask
 ```
 
-## Please note:
-If a test case returns as **true**, the test will pass, otherwise it will fail if returned as **undefined or false**
+After running this command, flask will initiate the testing process.
