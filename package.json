@@ -1,0 +1,14 @@
+{
+  "name": "flask",
+  "version": "0.0.1",
+  "description": "An extensible testing suite for the JavaScript ecosystem.",
+  "main": "flask.js",
+  "scripts": {
+    "test": "node flask test"
+  },
+  "keywords": [
+    "Flask Testing Suite"
+  ],
+  "author": "Rick Arendsen",
+  "license": "ISC"
+}
