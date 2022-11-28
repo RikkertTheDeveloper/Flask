@@ -1,13 +1,7 @@
-<br>
 
-<h2 align="center">Flask Testing Suite</h2>
-
-<p>
-    An extensible testing suite for the JavaScript ecosystem.
-</p>
-
-<hr>
-<br>
+<h3 align="center">Flask Testing Suite</h3>
+<p align="center">An extensible testing suite for the JavaScript ecosystem.</p>
+<br><br>
 
 ## What is Flask?
 Flask is an extensible, lightweight and modular test suite written in JavaScript. It can be used for any project within the JavaScript language.
