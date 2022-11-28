@@ -11,7 +11,7 @@ const file_system = require('fs');
 
 //* Register the text templates used throughout the application:
 const textTemplate_startMessage = "\x1b[33m\x1b[0m\x1b[33mFlask.js -\x1b[0m \x1b[35mCommencing Tests\x1b[0m\x1b[30m - %s\n\x1b[0m"
-const textTemplate_endMessage = "\n\x1b[33mTests Completed\x1b[0m\x1b[31m - ✖ %d Failed -\x1b[0m\x1b[32m ✔ %d Passed\x1b[0m"
+const textTemplate_endMessage = "\n\x1b[33mTests Completed\x1b[0m\x1b[31m - ✖ %d Failed -\x1b[0m\x1b[32m ✔ %d Passed\x1b[0m\x1b[30m - %s\n\x1b[0m"
 const textTemplate_errorMessage = "\x1b[29m* \x1b[0m\x1b[30m%s:\x1b[0m \x1b[31m✖ Failed\x1b[0m\x1b[28m - %dms\x1b[0m"
 const textTemplate_successMessage = "\x1b[29m* \x1b[0m\x1b[30m%s:\x1b[0m \x1b[32m✔ Passed\x1b[0m\x1b[28m - %dms \x1b[0m"
 
@@ -54,7 +54,8 @@ if(testFolderExists) {
         });
 
         //* Upon suite completion, register what the result was:
-        console.log(textTemplate_endMessage, testFiles_failed, testFiles_successful);
+        const currentSession_dateObjectEnd = new Date()
+        console.log(textTemplate_endMessage, testFiles_failed, testFiles_successful, `${currentSession_dateObjectEnd.toLocaleDateString()}: ${currentSession_dateObjectEnd.toLocaleTimeString()}`)
     }) 
 } else {
     console.assert(testFolderExists, "Tests folder was not found within the root directory.")
