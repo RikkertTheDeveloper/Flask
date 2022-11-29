@@ -1,6 +1,4 @@
-<div align="center"><img width=20% src="https://assets.onlinelabels.com/images/clip-art/pitr/pitr_Lab_icon_3.png"></div>
-<h1 align="center">Flask Testing Suite</h1>
-<h4 align="center">An extensible testing suite for the JavaScript framework.</h4>
+![Banner](https://repository-images.githubusercontent.com/571537453/63b39e39-0b72-437b-96a0-403bb574622c)
 <br>
 
 ### What is Flask?
