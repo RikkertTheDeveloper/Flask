@@ -1,6 +1,6 @@
 {
-  "name": "flask",
-  "version": "0.0.1",
+  "name": "flask-suite",
+  "version": "0.0.1a-dev",
   "description": "An extensible testing suite for the JavaScript ecosystem.",
   "main": "flask.js",
   "scripts": {
@@ -12,8 +12,12 @@
   "author": "Rick Arendsen",
   "license": "ISC",
 
+  "bin": {
+    "flask": "./bin/flask"
+  },
+
   "devDependencies": {
-      "@flask-globals": "0.0.1",
-      "@flask-generation": "0.0.1"
+      "@flask/globals": "0.0.1",
+      "@flask/generation": "0.0.1"
   }
 }

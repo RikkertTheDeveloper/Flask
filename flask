@@ -7,6 +7,8 @@
 
 //* Define used libraries within the application.
 const flask_generation = require("./packages/@flask-generation/src")
+
+const path = require('path');
 const console = require('console');
 const file_system = require('fs');
 
@@ -19,7 +21,9 @@ const textTemplate_errorMessage = "\x1b[29m* \x1b[0m\x1b[30m%s:\x1b[0m \x1b[31mâ
 const textTemplate_successMessage = "\x1b[29m* \x1b[0m\x1b[30m%s:\x1b[0m \x1b[32mâœ” Passed\x1b[0m\x1b[28m - %dms \x1b[0m"
 
 //* Commence assertions before starting test suite:
-const testFolderExists = file_system.existsSync('tests');
+const project_rootAddress = path.resolve(".");
+const testingFolder_address = path.resolve("tests");
+const testFolderExists = file_system.existsSync(testingFolder_address);
 
 //* If all assertions pass, start testing the files.
 if(testFolderExists && commandArgument_current == undefined) {
@@ -27,7 +31,7 @@ if(testFolderExists && commandArgument_current == undefined) {
     console.log(textTemplate_startMessage, `${currentSession_dateObject.toLocaleDateString()}: ${currentSession_dateObject.toLocaleTimeString()}`)
 
     //* Read out command line input, and loop over test folder.
-    file_system.readdir('tests', function(errorMessage, allTests) {
+    file_system.readdir(testingFolder_address, function(errorMessage, allTests) {
         let testFiles_failed = 0;
         let testFiles_successful = 0;
 
@@ -36,7 +40,7 @@ if(testFolderExists && commandArgument_current == undefined) {
 
             //* Format the correct information about the test.
             const currentTest_startTime = new Date(); 
-            const currentTest_file = require(`./tests/${test}`);
+            const currentTest_file = require(`${testingFolder_address}/${test}`);
 
             //* Execute the test function and gather the time the function took:
             const currentTest_result = currentTest_file.run();
@@ -62,7 +66,7 @@ if(testFolderExists && commandArgument_current == undefined) {
     }) 
 } else {
     if(commandArgument_current == undefined) {
-        console.assert(testFolderExists, "Tests folder was not found within the root directory.")
+        console.assert(testFolderExists, "Tests folder was not found within the root directory!")
     } else {
         const commandArgument_parameter = process.argv[3];
 
@@ -71,7 +75,7 @@ if(testFolderExists && commandArgument_current == undefined) {
         switch (commandArgument_current) {
             case "generate":
                 if(testFolderExists) {
-                    flask_generation.generateTest(`${__dirname}`, commandArgument_parameter)
+                    flask_generation.generateTest(project_rootAddress, commandArgument_parameter)
                 } else {
                     console.log("Cannot use 'generate' command without a 'tests' folder.")
                 }

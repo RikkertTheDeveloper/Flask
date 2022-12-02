@@ -16,9 +16,24 @@ module.exports = {
         * @param {int} minimum - What is the minimum amount?
         * @param {int} maximum - What is the max amount?
         * @returns {boolean} - The result of the assertion.
-    */
+     */
     assertIntegerBetween: function(integer, minimum, maximum) {
         integer = parseInt(integer);
         return(integer >= minimum && integer <= maximum);
+    },
+    
+    /**
+        * This function matches an integer to a weight using a 'proximity' parameter.
+        * @param {int} target 
+        * @param {int} match 
+        * @param {float} proximity 
+        * @returns {boolean} - The result of the assertion.
+     */
+    assertIntegerCloseTo: function(target, match, proximity) {
+        integer = parseInt(target);
+        result = integer - match;
+
+        //* Compare leftover number tally to proximity:
+        return(result < (proximity || 0) && result > 0);
     }
 }
