@@ -1,4 +1,19 @@
 <h1 align="center"><b>Flask Suite</b></h1>
+
+<div  align="center">
+    <a href="https://codeclimate.com/github/RikkertTheDeveloper/Flask">
+        <img src="https://api.codeclimate.com/v1/badges/afb6cf9cda393799f3a4/maintainability"/>
+    </a>
+</div>
+
+<div  align="center">
+     <img src="https://img.shields.io/github/repo-size/rikkertthedeveloper/Flask"/>
+    <img src="https://img.shields.io/npm/v/flask-suite" />
+    <img src="https://img.shields.io/librariesio/release/npm/flask-suite" />
+</div>
+
+<br>
+
 <p align="center">
     <strong>The extensible JavaScript testing suite.</strong><br>
     Written by <a href="https://www.github.com/rikkertthedeveloper">Rick Arendsen</a>
