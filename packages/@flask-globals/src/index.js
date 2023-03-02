@@ -1,13 +1,4 @@
-/**
-    * Assertion function.
-    * @param {boolean} condition 
-*/
-function assert(condition) {
-    if (!condition) {
-        throw new Error();
-    }
-}
-
+import { assert } from "../../@flask-utilities/src";
 
 module.exports = {
     /**
@@ -46,5 +37,5 @@ module.exports = {
 
         //* Compare leftover number tally to proximity:
         assert(result < (proximity || 0) && result > 0);
-    }
+    },
 }

@@ -7,6 +7,7 @@
 
 //* Define used libraries within the application.
 const flask_generation = require("./packages/@flask-generation/src")
+const flask_utilities = require("./packages/@flask-utilities/src")
 
 const path = require('path');
 const console = require('console');
@@ -41,14 +42,6 @@ const configuration_values = require(config_file_address)
 const testingFolder_address = path.resolve(configuration_values.tests_location);
 const testFolderExists = file_system.existsSync(testingFolder_address);
 
-function wrap_test_result(callback) {
-    try {
-        return callback()
-    } catch (_) {
-        return false
-    }
-}
-
 if(testFolderExists && commandArgument_current == undefined) {
     const currentSession_dateObject = new Date()
     console.log(textTemplate_startMessage, `${currentSession_dateObject.toLocaleDateString()}: ${currentSession_dateObject.toLocaleTimeString()}`)
@@ -66,7 +59,7 @@ if(testFolderExists && commandArgument_current == undefined) {
             const currentTest_file = require(`${testingFolder_address}/${test}`);
 
             //* Execute the test function and gather the time the function took:
-            const initialResult = wrap_test_result(currentTest_file.default);
+            const initialResult = flask_utilities.wrap_function(currentTest_file.default);
             const currentTest_result = (initialResult == undefined ? true : initialResult);
             const currentTest_endTime = new Date() - currentTest_startTime
 

@@ -1,6 +1,6 @@
 {
   "name": "flask-suite",
-  "version": "0.0.1a-dev",
+  "version": "0.0.1a",
   "description": "An extensible testing suite for the JavaScript ecosystem.",
 
   "repository": {
@@ -17,9 +17,7 @@
   ],
 
   "main": "flask.js",
-  "scripts": {
-    "test": "node flask test"
-  },
+ 
   "keywords": [
     "Flask Testing Suite"
   ],
@@ -31,8 +29,14 @@
     "flask": "./bin/flask"
   },
 
+  "bugs": {
+    "url" : "https://github.com/RikkertTheDeveloper/Flask/issues",
+    "email" : "rick.arendsen@student.graafschapcollege.nl"
+  },
+
   "devDependencies": {
-      "@flask/globals": "0.0.1",
-      "@flask/generation": "0.0.1"
+      "@flask/globals": "0.0.2",
+      "@flask/generation": "0.0.1",
+      "@flask/utilities": "0.0.1"
   }
 }

@@ -1,11 +1,14 @@
 {
     "name": "@flask/globals",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "main": "src/index.js",
 
     "files": [
         "src"
     ],
+
+    "description": "This package provides a series of global functions which can be used in tests.",
+    "contributors": ["Rick Arendsen <rejarendsen@gmail.com> (https://www.rickarendsen.nl)"],  
 
     "repository": {
         "type": "git",
