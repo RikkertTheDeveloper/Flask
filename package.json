@@ -1,6 +1,6 @@
 {
   "name": "flask-suite",
-  "version": "0.0.1a",
+  "version": "1.0.0",
   "description": "An extensible testing suite for the JavaScript ecosystem.",
 
   "repository": {
