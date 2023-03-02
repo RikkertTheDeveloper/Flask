@@ -1,3 +1,14 @@
+/**
+    * Assertion function.
+    * @param {boolean} condition 
+*/
+function assert(condition) {
+    if (!condition) {
+        throw new Error();
+    }
+}
+
+
 module.exports = {
     /**
         * Provides an interface for comparing two numbers.
@@ -7,7 +18,7 @@ module.exports = {
         * @returns {boolean} - The result of the assertion.
     */
     assertNumberBetween: function(number, minimum, maximum) {
-        return(number >= minimum && number <= maximum);
+        assert(number >= minimum && number <= maximum);
     },
 
     /**
@@ -19,7 +30,7 @@ module.exports = {
      */
     assertIntegerBetween: function(integer, minimum, maximum) {
         integer = parseInt(integer);
-        return(integer >= minimum && integer <= maximum);
+        assert(integer >= minimum && integer <= maximum);
     },
     
     /**
@@ -34,6 +45,6 @@ module.exports = {
         result = integer - match;
 
         //* Compare leftover number tally to proximity:
-        return(result < (proximity || 0) && result > 0);
+        assert(result < (proximity || 0) && result > 0);
     }
 }

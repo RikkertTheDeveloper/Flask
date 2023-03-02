@@ -2,6 +2,20 @@
   "name": "flask-suite",
   "version": "0.0.1a-dev",
   "description": "An extensible testing suite for the JavaScript ecosystem.",
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RikkertTheDeveloper/Flask"
+  },
+
+  "contributors": [
+    "Rick Arendsen <rejarendsen@gmail.com> (https://www.rickarendsen.nl)"
+  ],
+
+  "workspaces": [
+    "packages/*"
+  ],
+
   "main": "flask.js",
   "scripts": {
     "test": "node flask test"
@@ -9,6 +23,7 @@
   "keywords": [
     "Flask Testing Suite"
   ],
+
   "author": "Rick Arendsen",
   "license": "ISC",
 
