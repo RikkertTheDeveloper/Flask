@@ -7,6 +7,9 @@
         "src"
     ],
 
+    "description": "This package provides a series of functions which are used in order to generate files in the suite.",
+    "contributors": ["Rick Arendsen <rejarendsen@gmail.com> (https://www.rickarendsen.nl)"],  
+
     "repository": {
           "type": "git",
           "url": "https://github.com/RikkertTheDeveloper/Flask.git",
