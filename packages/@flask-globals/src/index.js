@@ -1,4 +1,4 @@
-import { assert } from "../../@flask-utilities/src";
+const assert = require("@flask/utilities").assert;
 
 module.exports = {
     /**
@@ -23,12 +23,12 @@ module.exports = {
         integer = parseInt(integer);
         assert(integer >= minimum && integer <= maximum);
     },
-    
+
     /**
         * This function matches an integer to a weight using a 'proximity' parameter.
-        * @param {int} target 
-        * @param {int} match 
-        * @param {float} proximity 
+        * @param {int} target
+        * @param {int} match
+        * @param {float} proximity
         * @returns {boolean} - The result of the assertion.
      */
     assertIntegerCloseTo: function(target, match, proximity) {
