@@ -1,3 +1,6 @@
+<p align=center>
+<img width=90 height=90 src="https://provider.ams3.cdn.digitaloceanspaces.com/assessment-solid.gif"/>
+</p>
 <h1 align="center"><b>Flask Suite</b></h1>
 
 <div  align="center">
